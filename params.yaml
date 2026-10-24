@@ -1,0 +1,16 @@
+TrainingArguments:
+  num_train_epochs: 1
+  warmup_steps: 500
+  per_device_train_batch_size: 1
+  weight_decay: 0.01
+  logging_steps: 10
+  eval_steps: 500
+  save_steps: 1000000
+
+Generation:
+  num_beams: 4              # lower to 2 for faster summaries on a slow CPU
+  length_penalty: 0.8
+  max_length: 100           # longest summary, in tokens
+  min_length: 10            # shortest summary, in tokens
+  no_repeat_ngram_size: 3
+  max_input_tokens: 1024    # longer text is cut off; lower to 512 if memory is tight
